@@ -37,7 +37,7 @@ X_train_scaled = scaler.fit_transform(X_train)
 X_test_scaled  = scaler.transform(X_test)
 
 print("\n=== Preprocessing Q2 ===")
-print(X_train_scaled.mean(axis=0), 6)
+print(X_train_scaled.mean(axis=0))
 # We fit the scaler only on X_train to prevent data leakage from the test set.
 
 
@@ -67,7 +67,7 @@ print(f"Accuracy: {accuracy_score(y_test, y_pred_scaled)}")
 # Q3
 cv_scores = cross_val_score(knn, X_train, y_train, cv=5)
 print("\n=== KNN Q3 ===")
-print(f"Fold scores: {cv_scores, 4}")
+print(f"Fold scores: {cv_scores}")
 print(f"Mean:        {cv_scores.mean()}")
 print(f"Std:         {cv_scores.std()}")
 # A single train/test split is less reliable than cross-validation. A single split is mostly 
@@ -134,7 +134,7 @@ print(classification_report(y_test, y_pred_dt, target_names=iris.target_names))
 # Q1
 print("\n=== Logistic Regression Q1 ===")
 for C in [0.01, 1.0, 100]:
-    lr = LogisticRegression(C=C, max_iter=1000, solver='lbfgs')
+    lr = LogisticRegression(C=C, max_iter=1000, solver='liblinear')
     lr.fit(X_train_scaled, y_train)
     total_coef = np.abs(lr.coef_).sum()
     print(f"C={C:6.2f}  total |coef| = {total_coef}")
