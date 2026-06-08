@@ -34,7 +34,7 @@ I also looked at foundary tools(Azure AI) out of curiosity. Some of the API-base
 === Monthly Cost Estimates ===
 Scenario A (lightweight):       $1.66
 Scenario B (GPU VM only):       $2233.80
-Scenario B VM costs 1345.7x more than Scenario A
+Scenario B VM costs 1342.4x more than Scenario A
 ```
 
 The calculated costs matched what the Pricing Calculator showed for the VM components. The multiplier on that last line is accurate but still surprising to see as a raw number. It reinforces why right-sizing your infrastructure matters. Choosing the wrong VM tier for a workload and leaving it running is one of the fastest ways to blow a cloud budget.
